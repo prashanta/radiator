@@ -1,0 +1,33 @@
+<div>
+	<div class="panel-container">
+		<div class="panel panel-default" style="height: 100%; overflow: hidden;">
+			<div class="panel-heading">
+				<i class="fa fa-bars icon"></i>				
+				STANDARD CUT JOBS
+				<span class="badge"></span> 
+				<div class="netstat">
+					<i class="netstat-run fa fa-circle-o-notch fa-stack-1x fa-spin"></i>
+	  				<i class="netstat-error fa fa-exclamation-circle fa-stack-1x"></i>
+	  			</div>
+			</div>
+			<table class="table">
+				<tr class='table-header'>
+					<th class='table-header' class='table-header'>JOB</th>
+					<th class='table-header'>DUE</th>
+					<th class='table-header'>JOB QTY</th>
+					<th class='table-header'>SUB-ASM</th>
+					<th class='table-header'>MATERIAL</th>			
+				</tr>
+				<!--{{#each this}}-->
+					<tr>
+						<td>{{jobNum}}</td>
+						<td>{{dueDate}}</td>
+						<td>{{productionQty}}</td>
+						<td>{{subAsmPartNum}}</td>
+						<td>{{subAsmMtlPartNum}}</td>				
+					</tr>
+				<!--{{/each}}-->
+			</table>
+		</div>
+	</div>	
+</div>	

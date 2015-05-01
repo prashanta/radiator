@@ -1,0 +1,33 @@
+/* Basic Application Styling*/ 
+.navbar{
+	margin-bottom: 0px;
+	border-radius: 0px;
+}
+
+.navbar-default .navbar-brand{	
+	font-size: 26px;
+	font-weight: bold;	
+}
+
+.panel{
+	border-radius: 0px;
+}
+
+.panel-heading{
+	font-weight: bold;
+	border-radius: 0px;		
+}
+
+.panel-body{
+	padding: 0px;
+}
+
+.row{
+	margin-right: 0px;
+	margin-left: 0px;
+}
+
+.col-md-6{
+	padding-right: 0px;
+	padding-left: 0px;
+}

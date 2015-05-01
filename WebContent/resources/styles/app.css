@@ -1,0 +1,87 @@
+/* Basic Application Styling */
+
+.table-header{
+	background-color: #EEE;	
+	border-bottom: 1px solid #DDD;	
+}
+
+th:nth-child(n+2){
+  border-left: 1px solid #AAA;
+}
+
+td:nth-child(n+2){
+  border-left: 1px solid #AAA;
+}
+
+tr:nth-of-type(odd){
+  background-color: #EEE;
+}
+
+.panel-container{
+	position: relative;
+	display: block;
+	height: 100%;	
+}
+
+td{
+	font-weight: bold;
+}
+
+.icon{
+	margin-right: 5px; 
+	color: #B33;	
+}
+
+.field-label{
+	  font-weight: bold;
+	  padding: 10px;
+	  background-color: #000;
+	  color: #FFF;
+	  margin: 10px 0px 10px 10px;
+	  display: block;
+	  position: relative;
+	  width: 10%;
+	  float: left;
+}
+
+.field{
+	font-weight: bold;
+	padding: 10px;
+	background-color: #75F46F;
+	margin: 10px 0px;
+	display: block;
+	position: relative;
+	width: 22%;
+	float: left;
+	box-sizing: border-box;
+}
+
+tr.highlight-green{
+	background-color: #75F46F;
+}
+
+tr.highlight-red{
+	background-color: #FF0000;
+	color: #FFF;
+}
+
+.netstat{
+  display: inline-block;
+  position: relative;
+  float: right;
+  height: auto;
+  width: 50px;
+  margin-right: -20px;
+}
+
+.netstat-run{
+	
+}
+
+.netstat-error{
+	color: #FF0000;
+}
+
+.hide{
+	display: none;
+}
