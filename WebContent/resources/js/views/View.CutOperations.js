@@ -110,7 +110,7 @@ define([
         		var dueDate = new Date(val.dueDate);
         		var now = new Date();
         		if(now > dueDate){
-        			$("tr:contains('"+val.jobNum+"')", this.$el).addClass("highlight-red");
+        			$("td:contains('"+val.jobNum+"')", this.$el).addClass("highlight-red");
         		}
         	}, this);
         },

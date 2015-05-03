@@ -60,7 +60,7 @@ tr.highlight-green{
 	background-color: #75F46F;
 }
 
-tr.highlight-red{
+.highlight-red{
 	background-color: #FF0000;
 	color: #FFF;
 }

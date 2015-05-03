@@ -22,15 +22,15 @@ define([
 	// Create application
 	var app = new Radiator();
 	
-	var header = new vRadHeader({title:"MTLX: CUT OPERATIONS"});
+	var header = new vRadHeader({title:"CUT WORK CENTER"});
 	
 	// CUT OPERATION layout view 
 	var mtlxcut = new vMTLXCUTLayout();
 	app.main.show(mtlxcut);
 	mtlxcut.header.show(header);
-	mtlxcut.stdops.show(new vCutOperations({type: 'std', template: templates.stdCutOperations, model: new mStdCutOperations}));
-	mtlxcut.nonstdops.show(new vCutOperations({type: 'nonstd', template: templates.nonStdCutOperations, model: new mNonStdCutOperations}));
-	mtlxcut.currentop.show(new vActiveOperation({type: 'active', template: templates.activeOperation, model: new mActiveOperation}));
+	mtlxcut.stdops.show(new vCutOperations({type: 'std', template: templates.stdCutOperations, model: new mStdCutOperations()}));
+	mtlxcut.nonstdops.show(new vCutOperations({type: 'nonstd', template: templates.nonStdCutOperations, model: new mNonStdCutOperations()}));
+	mtlxcut.currentop.show(new vActiveOperation({type: 'active', template: templates.activeOperation, model: new mActiveOperation()}));
 	
 	var router = new Router();
 	
