@@ -10,7 +10,11 @@ define(['marionette'], function (Maironette) {
 	    },
 	    
 	    showCutOperations : function () {
-	      console.log("Show CUT operations");	      
+	    	console.log("Show CUT operations");	    	
+	    	require(['views/View.MTLXCUTLayout'], function(vMTLXCUTLayout){    	    				
+	    		var mtlxcut = new vMTLXCUTLayout();
+	    		window.app.main.show(mtlxcut);
+	    	});
 	    },
 	    
 	    showSMM2Operations : function () {

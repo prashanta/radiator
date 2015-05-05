@@ -8,9 +8,11 @@ define([
     		return "resources/js/test-data/active.json";
     	},
     	
-    	getTimeLapse: function(ms){
-    		var date = this.get("labor").clockInDate;
-    		var time = this.get("labor").clockInTime;
+    	json: function(){
+    		return this.toJSON();
+    	},
+    	
+    	getTimeLapse: function(date, time){    		
     		var clockIn = new Date(date + " " + time);
     		var now = new Date();
     		var ms = now - clockIn;

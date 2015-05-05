@@ -9,25 +9,28 @@
   				<i class="netstat-error fa fa-exclamation-circle fa-stack-1x"></i>
   			</div>			
 		</div>
-		<div class="row">
-			<div class="field-label">JOB NUM</div>
-			<div id="jobNum" class="field">{{labor.jobNum}}</div>
-			
-			<div class="field-label">CLOCK IN</div>
-			<div class="field">{{labor.clockInDate}} - {{labor.clockInTime}}</div>
-			
-			<div class="field-label">NEXT WC</div>
-			<div class="field">{{oper.nextWorkCenter}}</div>
-		</div>					
-		<div class="row">
-			<div class="field-label">EST. TIME</div>
-			<div class="field">{{oper.estProdHours}}</div>
-			
-			<div class="field-label">ELAPSED</div>
-			<div id="lapse" class="field"></div>
-			
-			<div class="field-label">EMPLOYEE</div>
-			<div class="field">{{labor.employeeName}}</div>
-		</div>
+		
+		<table class="table">
+			<tr class='table-header'>
+				<th class='table-header'>JOB</th>
+				<th class='table-header'>RUN QTY</th>			
+				<th class='table-header'>CLOCK IN</th>
+				<th class='table-header'>ELAPSED</th>
+				<th class='table-header'>EMPLOYEE</th>
+				<th class='table-header'>NEXT WC</th>			
+			</tr>
+		
+			<!--{{#each this}}-->
+			<tr>
+				<td>{{labor.jobNum}}</td>
+				<td>{{oper.productionQty}}</td>				
+				<td>{{labor.clockInDate}} - {{labor.clockInTime}}</td>
+				<td id="{{labor.jobNum}}_lapse"></td>
+				<td>{{labor.employeeName}}</td>
+				<td>{{oper.nextWorkCenter}}</td>
+			</tr>
+			<!--{{/each}}-->
+						
+		</table>
 	</div>
 </div>	

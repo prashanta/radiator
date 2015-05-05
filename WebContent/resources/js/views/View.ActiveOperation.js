@@ -19,8 +19,6 @@ define([
     	 */
 		ui:{
 			badge : ".badge",
-			lapse: "#lapse",
-			jobNum: "#jobNum",
 			netstatRun: ".netstat-run",
 			netstatError: ".netstat-error"
 		},
@@ -59,18 +57,28 @@ define([
     	 */
         handleSuccess: function (options){
         	this.ui.netstatRun.hide();
-        	var oper = this.model.get("oper");
-        	if(oper != null){
-        		// render view
-        		this.render();	
-        		this.triggerMethod("active:fetched", oper.jobNum);
+        	var json = this.model.toJSON();
+        	
+        	if(_.size(json) > 0){
+        		console.log("View.ActiveOperation: rendering view");
+        		// Render view
+        		this.render();
+        		
+        		// Extract active job numbers 
+        		var jobs = new Array();
+        		_.each(json, function(value, key, list){
+        			this.push(value.labor.jobNum);        			        			
+        		}, jobs);
+        		
+        		this.triggerMethod("active:fetched", jobs);
+        		
         		// Print lapse time
         		this.printLapseTime();
         		// Start lapse timer
         		this.startLapseTimer();
         	}
         	else{        		
-        		this.ui.jobNum.html("NO ACTIVE JOB");
+        		//this.ui.jobNum.html("NO ACTIVE JOB");
         		this.startTimer();
         	}
         	
@@ -82,7 +90,7 @@ define([
         handleError: function (options) {
         	this.ui.netstatError.show();
         	this.ui.netstatRun.hide();
-        	//this.startTimer();
+        	this.startTimer();
         	this.getData();	
         },
         
@@ -110,8 +118,10 @@ define([
         },
         
         printLapseTime: function(){
-        	var lapse = this.model.getTimeLapse();
-    		this.ui.lapse.html(lapse[0] + " DAYS, " + lapse[1] + " HRS, " + lapse[2] + " MINS");
+        	_.each(this.model.json(), function(value, index){
+        		var lapse = this.model.getTimeLapse(value.labor.clockInDate, value.labor.clockInTime);
+        		$("#" + value.labor.jobNum + "_lapse", this.$el).html(lapse[0] + " DAYS, " + lapse[1] + " HRS, " + lapse[2] + " MINS");
+        	}, this);
         },
         
         /**

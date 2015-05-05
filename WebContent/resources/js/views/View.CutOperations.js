@@ -90,8 +90,12 @@ define([
         /**
     	 * Highlight active operation
     	 */
-        highlightActiveOperation: function(jobNum){        	
-        	$("tr:contains('"+jobNum+"')", this.$el).addClass("highlight-green");
+        highlightActiveOperation: function(jobs){
+        	_.each(jobs, function(jobNum, index ){
+        		// first unhighlight if overdue
+        		$("td:contains('"+jobNum+"')", this.$el).removeClass("highlight-red");
+        		$("tr:contains('"+jobNum+"')", this.$el).addClass("highlight-green");
+        	}, this);
         },
         
         /**
