@@ -4,11 +4,13 @@ define([
     'views/View.RadHeader',
     'views/View.CutOperations',
     'views/View.ActiveOperation',
+    'views/View.JobCount',
     'models/Model.StdCutOperations',
     'models/Model.NonStdCutOperations',
     'models/Model.ActiveOperation',
+    'models/Model.JobCount',
     'templates'
-], function(Backbone, Marionette, vRadHeader, vCutOperations, vActiveOperation, mStdCutOperations, mNonStdCutOperations, mActiveOperation, templates){
+], function(Backbone, Marionette, vRadHeader, vCutOperations, vActiveOperation, vJobCount, mStdCutOperations, mNonStdCutOperations, mActiveOperation, mJobCount, templates){
 	return Backbone.Marionette.LayoutView.extend({
 		template: templates.mtlxcutLayout,
 		tagName: 'div',
@@ -36,10 +38,11 @@ define([
 		onBeforeShow: function() {
 			// Show child views
 			this.header.show(new vRadHeader({title:"CUT WORK CENTER"}));
-			this.stdops.show(new vCutOperations({type: 'std', template: templates.stdCutOperations, model: new mStdCutOperations(), meep: "meep1"}));
-			this.nonstdops.show(new vCutOperations({type: 'nonstd', template: templates.nonStdCutOperations, model: new mNonStdCutOperations(), meep: "meep2"}));
+			this.stdops.show(new vCutOperations({type: 'std', template: templates.stdCutOperations, model: new mStdCutOperations()}));
+			this.nonstdops.show(new vCutOperations({type: 'nonstd', template: templates.nonStdCutOperations, model: new mNonStdCutOperations()}));
 			this.currentop.show(new vActiveOperation({type: 'active', template: templates.activeOperation, model: new mActiveOperation()}));
 
+      this.jobCount.show(new vJobCount({type: 'jobCount', template: templates.jobCount, model: new mJobCount()}));
 		},
 
 		onShow: function(){

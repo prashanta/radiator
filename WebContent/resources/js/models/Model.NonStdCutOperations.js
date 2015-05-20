@@ -6,6 +6,6 @@ define([
 		urlRoot : function(){
     		// return global.getBaseUrl() + "/granite/api/ir/mtlncutoperations";
     		return "resources/js/test-data/nonstd.json";
-    	},
+    	}
 	});
 });

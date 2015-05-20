@@ -1,36 +1,36 @@
 <div>
 	<div class="panel panel-default" style="height: 100%; overflow: hidden;">
-	
+
 		<div class="panel-heading">
 			<i class="fa fa-bars icon"></i>
 			ACTIVE OPERATIONS
 			<div class="netstat">
 				<i class="netstat-run fa fa-circle-o-notch fa-stack-1x fa-spin"></i>
   				<i class="netstat-error fa fa-exclamation-circle fa-stack-1x"></i>
-  			</div>			
+  			</div>
 		</div>
-		
+
 		<table class="table">
 			<tr class='table-header'>
 				<th class='table-header'>JOB</th>
-				<th class='table-header'>RUN QTY</th>			
+				<th class='table-header'>RUN QTY</th>
 				<th class='table-header'>CLOCK IN</th>
 				<th class='table-header'>ELAPSED</th>
 				<th class='table-header'>EMPLOYEE</th>
-				<th class='table-header'>NEXT WC</th>			
+				<th class='table-header'>NEXT WC</th>
 			</tr>
-		
+
 			<!--{{#each this}}-->
-			<tr>
+			<tr class="highlight-active">
 				<td>{{labor.jobNum}}</td>
-				<td>{{oper.productionQty}}</td>				
+				<td>{{oper.productionQty}}</td>
 				<td>{{labor.clockInDate}} - {{labor.clockInTime}}</td>
 				<td id="{{labor.jobNum}}_lapse"></td>
 				<td>{{labor.employeeName}}</td>
 				<td>{{oper.nextWorkCenter}}</td>
 			</tr>
 			<!--{{/each}}-->
-						
+
 		</table>
 	</div>
-</div>	
+</div>

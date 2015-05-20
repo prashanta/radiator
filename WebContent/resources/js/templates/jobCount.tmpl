@@ -3,14 +3,28 @@
 
     <div class="panel-heading">
       <i class="fa fa-bars icon"></i>
-      The HEADING
+      JOB COUNT
       <div class="netstat">
         <i class="netstat-run fa fa-circle-o-notch fa-stack-1x fa-spin"></i>
           <i class="netstat-error fa fa-exclamation-circle fa-stack-1x"></i>
         </div>
     </div>
 
-    not the heading
+    <table class="table">
+      <tr class='table-header'>
+        <th class='table-header'>Count</th>
+        <th class='table-header'>Date</th>
+
+      </tr>
+
+      <!--{{#each this}}-->
+      <tr>
+        <td>{{count}}</td>
+        <td>{{date}}</td>
+      </tr>
+      <!--{{/each}}-->
+
+    </table>
 
   </div>
 </div>
