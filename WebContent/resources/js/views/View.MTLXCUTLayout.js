@@ -36,10 +36,10 @@ define([
 		onBeforeShow: function() {
 			// Show child views
 			this.header.show(new vRadHeader({title:"CUT WORK CENTER"}));
-			this.stdops.show(new vCutOperations({type: 'std', template: templates.stdCutOperations, model: new mStdCutOperations()}));
-			this.nonstdops.show(new vCutOperations({type: 'nonstd', template: templates.nonStdCutOperations, model: new mNonStdCutOperations()}));
+			this.stdops.show(new vCutOperations({type: 'std', template: templates.stdCutOperations, model: new mStdCutOperations(), meep: "meep1"}));
+			this.nonstdops.show(new vCutOperations({type: 'nonstd', template: templates.nonStdCutOperations, model: new mNonStdCutOperations(), meep: "meep2"}));
 			this.currentop.show(new vActiveOperation({type: 'active', template: templates.activeOperation, model: new mActiveOperation()}));
-      
+
 		},
 
 		onShow: function(){

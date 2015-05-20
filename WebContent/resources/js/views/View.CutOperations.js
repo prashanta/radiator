@@ -129,7 +129,7 @@ define([
             var myDate = val.dueDate.split("-");
             var dueDate = new Date(new Date(myDate[1]+"/"+myDate[0]+"/"+myDate[2]));
             var now = new Date();
-            if((now.getDate() == dueDate.getDate()) && (now.getFullYear() == dueDate.getFullYear()) && (now.getYear() == dueDate.getYear()) ){
+            if((now.getDate() == dueDate.getDate()) && (now.getFullYear() == dueDate.getFullYear()) && (now.getMonth() == dueDate.getMonth()) ){
               $("td:contains('"+val.jobNum+"')", this.$el).removeClass("highlight-due");
               $("td:contains('"+val.jobNum+"')", this.$el).addClass("highlight-today");
             }
