@@ -69,7 +69,7 @@ define([
         /**
     	 * On render
     	 */
-        onRender: function(){
+        onRender: function(){        	
         	this.$el = this.$el.children();
             this.$el.unwrap();
             this.setElement(this.$el);

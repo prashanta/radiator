@@ -1,3 +1,7 @@
+/*
+ * View.MTLXCUTLayout.js
+ */
+
 define([
     'backbone',
     'marionette',
@@ -63,11 +67,12 @@ define([
 
 		// Event handler for Child View Fetch Success event
 		onChildviewActiveFetched: function (childView, jobNum) {
-			/* TODO :
-			 * Instead of invoking view's member variable, what about -
-			 * 1) Adding active jobs array in the view model (and update that) and have view auto render once it is changed
+
+			/* TODO : 
+			 * Instead of invoking view's member function which looks dirty, what about - 
+			 * 1) Adding active jobs array in the view model (and update that) and have view auto render once it is changed			 
 			 * OR
-			 * 2) Use radio instead of function invocation, which looks dirty
+			 * 2) Use backbones's radio instead
 			 */
 
 			this.stdops.currentView.highlightActiveOperation(jobNum);

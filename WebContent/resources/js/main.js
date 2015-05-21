@@ -11,7 +11,7 @@ require.config({
         timers: '../libs/timers',
         d3: '../libs/d3.v3.min',
         rickshaw: '../libs/rickshaw.min'
-    },
+    },   
     shim:{
         backbone: {
             exports: 'Backbone',
@@ -31,7 +31,12 @@ require.config({
             deps:['d3']
         }
     },
-    deps: ['jquery', 'underscore', 'handlebars', 'bootstrap', 'timers', 'd3']
+
+    deps: ['jquery', 'underscore', 'handlebars', 'bootstrap', 'timers', 'd3'],
+    
+    // Wait indefinitely 
+    waitSeconds: 0
+    
 });
 
 require(['app'], function(App){
