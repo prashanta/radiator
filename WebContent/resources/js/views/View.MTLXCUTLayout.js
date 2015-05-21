@@ -12,9 +12,9 @@ define([
     'models/Model.StdCutOperations',
     'models/Model.NonStdCutOperations',
     'models/Model.ActiveOperation',
-    'models/Model.JobCount',
+    //'models/Model.JobCount',
     'templates'
-], function(Backbone, Marionette, vRadHeader, vCutOperations, vActiveOperation, vJobCount, mStdCutOperations, mNonStdCutOperations, mActiveOperation, mJobCount, templates){
+], function(Backbone, Marionette, vRadHeader, vCutOperations, vActiveOperation, vJobCount, mStdCutOperations, mNonStdCutOperations, mActiveOperation, /*mJobCount,*/ templates){
 	return Backbone.Marionette.LayoutView.extend({
 		template: templates.mtlxcutLayout,
 		tagName: 'div',
@@ -45,8 +45,7 @@ define([
 			this.stdops.show(new vCutOperations({type: 'std', template: templates.stdCutOperations, model: new mStdCutOperations()}));
 			this.nonstdops.show(new vCutOperations({type: 'nonstd', template: templates.nonStdCutOperations, model: new mNonStdCutOperations()}));
 			this.currentop.show(new vActiveOperation({type: 'active', template: templates.activeOperation, model: new mActiveOperation()}));
-
-      this.jobCount.show(new vJobCount({type: 'jobCount', template: templates.jobCount, model: new mJobCount()}));
+			//this.jobCount.show(new vJobCount({type: 'jobCount', template: templates.jobCount, model: new mJobCount()}));
 		},
 
 		onShow: function(){
