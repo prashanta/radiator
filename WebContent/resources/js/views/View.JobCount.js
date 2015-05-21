@@ -1,8 +1,9 @@
 define([
   'backbone',
   'marionette',
+  'rickshaw',
   'templates'
-], function(Backbone, Marionette, templates){
+], function(Backbone, Marionette, Rickshaw, templates){
     return Marionette.ItemView.extend({
       tagName: 'div',
 
@@ -20,7 +21,8 @@ define([
       ui:{
         badge : ".badge",
         netstatRun: ".netstat-run",
-        netstatError: ".netstat-error"
+        netstatError: ".netstat-error",
+        graph: "#jobs",
       },
 
       /**
@@ -30,7 +32,6 @@ define([
         this.listenTo(this.model, 'successOnFetch', this.handleSuccess);
         this.listenTo(this.model, 'errorOnFetch', this.handleError);
         this.listenTo(this, 'getdata', this.getData);
-        this.listenTo(this, 'updatelapse', this.printLapseTime);
       },
 
       /**
@@ -58,24 +59,13 @@ define([
       handleSuccess: function (options){
         this.ui.netstatRun.hide();
         var json = this.model.toJSON();
-        console.log(json);
-        
+        // console.log(json);
+
         if(_.size(json) > 0){
           console.log("View.JobCount: rendering view");
           // Render view
           this.render();
 
-          // Extract active job numbers
-          var jobs = new Array();
-          _.each(json, function(value, key, list){
-            this.push(value.labor.jobNum);
-          }, jobs);
-
-          this.triggerMethod("active:fetched", jobs);
-
-          // Print lapse time
-          this.printLapseTime();
-          // Start lapse timer
           this.startLapseTimer();
         }
         else{
@@ -99,6 +89,7 @@ define([
       * On render
       */
       onRender: function(){
+
         // Jumping hoops to remove DIV element
         this.$el = this.$el.children();
         this.$el.unwrap();
@@ -113,22 +104,38 @@ define([
           this.getData();
           t["firstRun"] = false;
         }
-        // for rest of the times get data in regular intervals
-        else
+        else             // for rest of the times get data in regular intervals
           this.startTimer();
-        },
+          var data1 = [ { x: 0, y: 20 }, { x: 1, y: 49 }, { x: 2, y: 38 }, { x: 3, y: 30 }, { x: 4, y: 32 } ];
+          console.log(data1);
+          console.log(this.model);
+          var graph = new Rickshaw.Graph({
+            width: 600,
+            height: 110,
+            element: this.ui.graph.get(0),
+            renderer: 'lineplot',
+            padding: { top: 0.1 },
+            series: [
+            {
+              data: data1,
+              color: 'steelblue',
+              name: "blue",
+            }, {
+              data: [ { x: 0, y: 19 }, { x: 1, y: 22 }, { x: 2, y: 32 }, { x: 3, y: 20 }, { x: 4, y: 21 } ],
+              color: 'lightblue',
+              name: "light blue"
+            }
+            ]
+          } );
 
-        printLapseTime: function(){
-          _.each(this.model.json(), function(value, index){
-            var lapse = this.model.getTimeLapse(value.labor.clockInDate, value.labor.clockInTime);
-            $("#" + value.labor.jobNum + "_lapse", this.$el).html(lapse[0] + " DAYS, " + lapse[1] + " HRS, " + lapse[2] + " MINS");
-          }, this);
+          graph.render();
+
         },
 
         /**
         *	Start timer
         */
-        startTimer: function(){
+      startTimer: function(){
           var t = this;
           if(t["timer"] == null)
             t["timer"] = TimersJS.timer(t["updateInterval"], function(){ t.trigger("getdata"); });
@@ -136,18 +143,20 @@ define([
             t["timer"].restart();
         },
 
-        startLapseTimer: function(){
+      startLapseTimer: function(){
           var t = this;
           if(t["lapseTimer"] == null)
-            t["lapseTimer"] = TimersJS.repeater(t["lapseInterval"], function(){ t.trigger("updatelapse"); });
+            t["lapseTimer"] = TimersJS.repeater(t["lapseInterval"], function(){
+                // t.trigger("updatelapse");
+              });
           else
             t["lapseTimer"].restart();
         },
 
-        pauseLapseTimer: function(){
-            var t = this;
-            if(t["lapseTimer"] != null)
-              t["lapseTimer"].pause();
-          }
+      pauseLapseTimer: function(){
+        var t = this;
+        if(t["lapseTimer"] != null)
+          t["lapseTimer"].pause();
+        }
     });
   });
