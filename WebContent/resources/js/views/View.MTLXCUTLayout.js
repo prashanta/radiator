@@ -30,7 +30,7 @@ define([
 			stdops: "#std",
 			nonstdops: "#nonstd",
 			currentop: "#currentop",
-      jobCount: "#jobCount"
+            jobCount: "#jobCount"
 		},
 
 		ui:{
@@ -67,9 +67,9 @@ define([
 		// Event handler for Child View Fetch Success event
 		onChildviewActiveFetched: function (childView, jobNum) {
 
-			/* TODO : 
-			 * Instead of invoking view's member function which looks dirty, what about - 
-			 * 1) Adding active jobs array in the view model (and update that) and have view auto render once it is changed			 
+			/* TODO :
+			 * Instead of invoking view's member function which looks dirty, what about -
+			 * 1) Adding active jobs array in the view model (and update that) and have view auto render once it is changed
 			 * OR
 			 * 2) Use backbones's radio instead
 			 */

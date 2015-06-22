@@ -70,6 +70,15 @@ tr.highlight-active{
 	color: #FFF;
 }
 
+.timeStamp{
+  display: inline-block;
+  position: relative;
+  float: right;
+  height: auto;
+  width: 150px;
+  margin-right: -20px;
+}
+
 .netstat{
   display: inline-block;
   position: relative;

@@ -16,7 +16,8 @@ define([
 		ui:{
 			badge : ".badge",
 			netstatRun: ".netstat-run",
-			netstatError: ".netstat-error"
+			netstatError: ".netstat-error",
+            timeStamp: ".timeStamp"
 		},
 
 		/**
@@ -55,6 +56,8 @@ define([
             this.triggerMethod("fetch:success");
             this.highlightOverDueOperations();
             this.highlightTodaysOperations();
+            var now = new Date();
+            this.ui.timeStamp.html(" last update at:" +  now.getHours() + ':' + now.getMinutes());
         },
 
         /**
@@ -69,7 +72,7 @@ define([
         /**
     	 * On render
     	 */
-        onRender: function(){        	
+        onRender: function(){
         	this.$el = this.$el.children();
             this.$el.unwrap();
             this.setElement(this.$el);
