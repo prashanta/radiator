@@ -57,7 +57,9 @@ define([
             this.highlightOverDueOperations();
             this.highlightTodaysOperations();
             var now = new Date();
-            this.ui.timeStamp.html(" last update at:" +  now.getHours() + ':' + now.getMinutes());
+            var hr = now.getHours();
+            var min = now.getMinutes();
+            this.ui.timeStamp.html("Last update at " +  (hr<10? ("0"+hr) : hr) + ':' + (min<10? ("0"+min) : min) );            
         },
 
         /**
