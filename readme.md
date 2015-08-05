@@ -1,5 +1,5 @@
 **Radiator** is a SPA that displays manufacturing matrices in the form of dashboard items. Based on Marionette.js, this basically retrieves information from ERP database and displays them on various screen sizes.
-
+* * *
 
 #### SETUP RASPBERRY PI:
 
@@ -45,7 +45,7 @@ Add
 ```
 asdf
 ```
-
+* * *
 ### RELEASE NOTES:
 
 #### Version 0.2:
