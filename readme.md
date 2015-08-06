@@ -38,12 +38,17 @@ sudo apt-get install chromium x11-server-util unclutter
 
 ##### Setup Startup
 ```
- sudo nano /etc/xdg/lxsession/LXD-pi
+ sudo nano /etc/xdg/lxsession/LXDE-pi
 ```
 Add
 
 ```
-asdf
+#@xscreensaver -no-splash
+@xset s off
+@xset -dpms
+@xset s noblank
+
+@lxterminal -e "python /home/pi/starter.py"
 ```
 * * *
 ### RELEASE NOTES:
