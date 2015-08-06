@@ -79,6 +79,10 @@ hdmi_group=1
 hdmi_mode=34
 ```
 
+Then reboot,
+```
+sudo reboot
+```
 * * *
 ### RELEASE NOTES:
 
