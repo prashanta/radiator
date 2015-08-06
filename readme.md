@@ -41,6 +41,12 @@ network = {
     key_mgmt=WPA-PSK
 }
 ```
+
+Then reboot,
+```
+sudo reboot
+```
+
 ##### Setup Chromium, X11 Server Utility and Unclutter
 ```
 sudo apt-get install chromium x11-xserver-utils unclutter
