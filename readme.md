@@ -9,6 +9,7 @@ sudo raspi-config
 ```
 
 - Expand file system
+- Enable boot to desktop
 - Change timezone
 - Enable SSH
 
