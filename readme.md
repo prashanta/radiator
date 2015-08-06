@@ -60,6 +60,25 @@ Add
 
 @lxterminal -e "python /home/pi/starter.py"
 ```
+
+##### Setup Screen Resulation
+To view available display modes
+```
+tvservice -d edid
+edidparser edid
+```
+
+Change display mode:
+```
+sudo nano /boot/config.txt
+```
+
+Uncomment to force HDMI mode and group:
+```
+hdmi_group=1
+hdmi_mode=34
+```
+
 * * *
 ### RELEASE NOTES:
 
