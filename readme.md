@@ -67,7 +67,7 @@ Add
 @lxterminal -e "python /home/pi/starter.py"
 ```
 
-##### Setup Screen Resulation
+##### Setup Screen Resolution
 To view available display modes
 ```
 tvservice -d edid
