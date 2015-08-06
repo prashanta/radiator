@@ -3,6 +3,15 @@
 
 #### SETUP RASPBERRY PI:
 
+##### Initial Setting
+```
+sudo raspi-config
+```
+
+- Expand file system
+- Change timezone
+- Enable SSH
+
 ##### Setup Keyboard
 ```
 sudo nano /etc/default/keyboard --> change from gb to us
