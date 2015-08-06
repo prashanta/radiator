@@ -33,7 +33,7 @@ network = {
 ```
 ##### Setup Chromium, X11 Server Utility and Unclutter
 ```
-sudo apt-get install chromium x11-server-utils unclutter
+sudo apt-get install chromium x11-xserver-utils unclutter
 ```
 
 ##### Setup Startup
