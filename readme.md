@@ -4,6 +4,9 @@
 #### SETUP RASPBERRY PI:
 
 ##### Initial Setting
+
+- Install latest RASPBIAN (kernel verison >= 3.18.11-v7)
+
 ```
 sudo raspi-config
 ```
@@ -88,6 +91,12 @@ hdmi_mode=34
 Then reboot,
 ```
 sudo reboot
+```
+* * *
+##### Setup VNC Server
+```
+sudo apt-get install
+x11vnc -display :0
 ```
 * * *
 ### RELEASE NOTES:
