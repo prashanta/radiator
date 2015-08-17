@@ -108,13 +108,12 @@ x11vnc -display :0
 
 * * *
 
-### SETTING UP RASPBERRY PI
+### IP TABLE
 
-1. Get a Raspberry Pi (Version 2 perferred or overclock Version 1)
-2. Install latest Raspbian
-3. Install _Chromium_, _x11-server-util_ and _unclutter_ :
-   ```sudo apt-get install chromium x11-server-util unclutter```
-4. Setup wireless access points in /etc/wpa_supplicant/wpa_supplicant.conf (Make sure IP is fixed by DHCP based on MAC address)
-6. Enable SSH
-7. Autostart python script - starter.py
-8. Fix monitor resolution - use tvservice command. Start with the resolution with highest score and move down.
+|Cell|IP Address|MAC Address|Target URL|
+|----|-----------|-----------|-----------|
+|Band Saw|192.168.74.202| |http://192.168.74.250/radiator/#101|
+|Andover|192.168.74.201| |http://192.168.74.110/andover|
+|VF2|192.168.74.203|74:DA:38:33:A6:FB|http://192.168.74.110/VF2|
+|SMM|192.168.74.204|74:DA:38:33:A6:E9|http://192.168.74.110/SMM|
+|Hurco|192.168.74.205|74:DA:38:33:A6:DF|http://192.168.74.110/Hurco|
