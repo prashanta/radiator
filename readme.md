@@ -95,7 +95,7 @@ sudo reboot
 * * *
 ##### Setup VNC Server
 ```
-sudo apt-get install
+sudo apt-get install x11vnc
 x11vnc -display :0
 ```
 * * *
