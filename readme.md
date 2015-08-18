@@ -5,7 +5,7 @@
 
 ##### Initial Setting
 
-- Install latest RASPBIAN (kernel verison >= 3.18.11-v7)
+- Install **latest** RASPBIAN (kernel verison >= 3.18.11-v7)
 
 ```
 sudo raspi-config
@@ -82,7 +82,7 @@ Change display mode:
 sudo nano /boot/config.txt
 ```
 
-Uncomment to force HDMI mode and group (CEA:1, CMT: 2):
+Uncomment to force HDMI mode and group (CEA:1, DMT: 2):
 ```
 hdmi_group=1
 hdmi_mode=34
