@@ -82,7 +82,7 @@ Change display mode:
 sudo nano /boot/config.txt
 ```
 
-Uncomment to force HDMI mode and group:
+Uncomment to force HDMI mode and group (CEA:1, CMT: 2):
 ```
 hdmi_group=1
 hdmi_mode=34
