@@ -15,14 +15,14 @@ sudo raspi-config
 - Enable boot to desktop
 - Change timezone
 - Enable SSH
-
+* * *
 ##### Setup Keyboard
 ```
 sudo nano /etc/default/keyboard --> change from gb to us
 sudo dpkg-reconfigure locales --> select en_US UTF8
 sudo reboot
 ```
-
+* * *
 ##### Setup Wifi
 
 ```
@@ -49,12 +49,12 @@ Then reboot,
 ```
 sudo reboot
 ```
-
+* * *
 ##### Setup Chromium, X11 Server Utility and Unclutter
 ```
 sudo apt-get install chromium x11-xserver-utils unclutter
 ```
-
+* * *
 ##### Setup Startup
 ```
  sudo nano /etc/xdg/lxsession/LXDE-pi
@@ -69,7 +69,7 @@ Add
 
 @lxterminal -e "python /home/pi/starter.py"
 ```
-
+* * *
 ##### Setup Screen Resolution
 To view available display modes
 ```
@@ -97,6 +97,30 @@ sudo reboot
 ```
 sudo apt-get install x11vnc
 x11vnc -display :0
+```
+* * *
+##### Setup Static IP for Ehternet
+```
+sudo cp /etc/network/interfaces /etc/network/interfaces.bkup
+sudo nano /etc/network/interfaces
+```
+Comment out DHCP setting if enabled:
+```
+#iface eth0 inet dhcp
+```
+
+Setup static lan:
+```
+# The loopback interface
+auto lo
+iface lo inet loopback
+auto eth0
+iface eth0 inet static
+address 192.168.1.118  
+gateway 192.168.1.1
+netmask 255.255.255.0
+network 192.168.1.0
+broadcast 192.168.1.255
 ```
 * * *
 ### RELEASE NOTES:
