@@ -23,6 +23,12 @@ sudo dpkg-reconfigure locales --> select en_US UTF8
 sudo reboot
 ```
 * * *
+##### Change Hostname
+```
+sudo nano /etc/hostname --> change hostname
+sudo reboot
+```
+* * *
 ##### Setup Wifi
 
 ```
@@ -121,6 +127,11 @@ gateway 192.168.1.1
 netmask 255.255.255.0
 network 192.168.1.0
 broadcast 192.168.1.255
+```
+
+Restart network
+```
+sudo /etc/init.d/networking restart
 ```
 * * *
 ### RELEASE NOTES:
