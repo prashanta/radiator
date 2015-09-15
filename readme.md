@@ -147,8 +147,8 @@ sudo /etc/init.d/networking restart
 
 |Cell|IP Address|MAC Address|Target URL|
 |----|-----------|-----------|-----------|
-|Band Saw|192.168.74.202| |http://192.168.74.250/radiator/#101|
-|Andover|192.168.74.201| |http://192.168.74.110/andover|
+|Band Saw|192.168.74.202|74:DA:38:33:A6:E4|http://192.168.74.250/radiator/#101|
+|Andover|192.168.74.201|00:E0:4D:86:7B:30|http://192.168.74.110/andover|
 |VF2|192.168.74.203|74:DA:38:33:A6:FB|http://192.168.74.110/VF2|
 |SMM|192.168.74.204|74:DA:38:33:A6:E9|http://192.168.74.110/SMM|
 |Hurco|192.168.74.205|74:DA:38:33:A6:DF|http://192.168.74.110/Hurco|
