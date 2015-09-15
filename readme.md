@@ -102,8 +102,28 @@ sudo reboot
 ##### Setup VNC Server
 ```
 sudo apt-get install x11vnc
-x11vnc -display :0
 ```
+
+Now start it forever
+```
+cd /home/pi/.config
+mkdir autostart
+cd autostart
+sudo nano x11vnc.desktop
+```
+
+Add the following lines in the file
+```
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=X11VNC
+Exec=x11vnc -forever -display :0
+StartupNotify=false
+Terminal=false
+Hidden=false
+```
+Save file and reboot.
 * * *
 ##### Setup Static IP for Ehternet
 ```
