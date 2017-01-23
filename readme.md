@@ -1,6 +1,33 @@
 **Radiator** is a SPA that displays manufacturing matrices in the form of dashboard items. Based on Marionette.js, this basically retrieves information from ERP database and displays them on various screen sizes.
 * * *
 
+#### Quick Start
+
+
+## Clone source
+
+
+```
+git clone git@bitbucket.org:gemtdev/radiator.git
+```
+
+## Package 
+
+Go into radiator directory and run
+
+```
+docker run -it --rm -v "$PWD":/usr/src/radiator -w /usr/src/radiator java:7 jar -cvf radiator.war *
+```
+
+## Upload to Tomcat
+
+```
+curl --upload-file radiator.war "http://user:password@192.168.1.99:8080/manager/text/deploy?path=/radiator&update=true"
+```
+
+Note: Make sure _user_ has the role "manager-script".
+
+
 #### SETUP RASPBERRY PI:
 
 ##### Initial Setting
