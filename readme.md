@@ -90,7 +90,7 @@ sudo apt-get install chromium x11-xserver-utils unclutter
 * * *
 ##### Setup Startup
 ```
- sudo nano /etc/xdg/lxsession/LXDE-pi
+ sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
 ```
 Add
 
